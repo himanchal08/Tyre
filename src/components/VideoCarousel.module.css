@@ -1,0 +1,147 @@
+.carouselContainer {
+  margin-bottom: 3rem;
+}
+
+.carouselHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.carouselTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.carouselControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controlButton {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-gray-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: var(--color-gray-700);
+}
+
+.carouselItems {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.carouselItem {
+  flex-shrink: 0;
+  width: 250px;
+}
+
+.carouselItemInner {
+  position: relative;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.carouselThumbnail {
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+}
+
+.premiumOverlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.premiumLock {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playButton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carouselItem:hover .playButton {
+  opacity: 1;
+}
+
+.playButtonInner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(147, 51, 234, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.playButtonInner:hover {
+  transform: scale(1.1);
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-gray-800);
+}
+
+.progressIndicator {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
+
+.videoInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+}
+
+.videoTitle {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-white);
+}
+
+.videoDuration {
+  font-size: 0.75rem;
+  color: var(--color-gray-300);
+}

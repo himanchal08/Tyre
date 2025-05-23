@@ -1,0 +1,161 @@
+.plansPage {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gray-900),
+    var(--color-black),
+    var(--color-gray-900)
+  );
+  color: var(--color-white);
+}
+
+.plansHeader {
+  background-color: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-gray-800);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-white);
+  transition: color 0.2s ease;
+}
+
+.headerLeft:hover {
+  color: var(--color-purple-500);
+}
+
+.headerLogo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    var(--color-purple-500),
+    var(--color-blue-500)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.headerNav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .headerNav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.navLink {
+  color: var(--color-gray-400);
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.heroSection {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.75rem;
+  }
+}
+
+.heroHighlight {
+  color: var(--color-purple-500);
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  color: var(--color-gray-300);
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .heroDescription {
+    font-size: 1.5rem;
+  }
+}
+
+.featuresList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.featureBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(31, 41, 55, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-full);
+}
+
+.featureIndicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--color-green-500);
+  border-radius: 50%;
+}
+
+.featureText {
+  font-size: 0.875rem;
+}
+
+.faqSection {
+  padding: 5rem 0;
+  background-color: rgba(31, 41, 55, 0.5);
+}
+
+.faqTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faqList {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.faqItem {
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.faqQuestion {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.faqAnswer {
+  color: var(--color-gray-400);
+}

@@ -1,0 +1,170 @@
+.videoPlayerContainer {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-black);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.premiumTimer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+}
+
+.premiumTimerIcon {
+  margin-right: 0.25rem;
+  color: var(--color-purple-500);
+}
+
+.premiumTimerText {
+  color: var(--color-purple-300);
+  font-size: 0.75rem;
+}
+
+.videoControls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.progressContainer {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeDisplay {
+  font-size: 0.75rem;
+  color: var(--color-gray-300);
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 4px;
+  background-color: var(--color-gray-700);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  position: relative;
+}
+
+.progressInput {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.progressBarFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controlsLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controlButton {
+  color: var(--color-white);
+  transition: color 0.2s ease;
+}
+
+.controlButton:hover {
+  color: var(--color-purple-500);
+}
+
+.volumeContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.volumeSlider {
+  width: 5rem;
+  height: 4px;
+  background-color: var(--color-gray-700);
+  border-radius: var(--border-radius-full);
+  cursor: pointer;
+  position: relative;
+}
+
+.volumeInput {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.volumeSliderFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.playButtonLarge {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: rgba(147, 51, 234, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

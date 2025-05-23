@@ -1,0 +1,82 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gray-900),
+    var(--color-black)
+  );
+  color: var(--color-white);
+}
+
+.dashboardContent {
+  padding: 2rem 0;
+}
+
+.filtersContainer {
+  margin-bottom: 2rem;
+}
+
+.subscriptionBanner {
+  background: linear-gradient(
+    to right,
+    rgba(124, 58, 237, 0.7),
+    rgba(79, 70, 229, 0.7)
+  );
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .bannerContent {
+    flex-direction: row;
+  }
+}
+
+.bannerText {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .bannerText {
+    margin-bottom: 0;
+  }
+}
+
+.bannerTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.bannerDescription {
+  color: rgba(243, 232, 255, 0.9);
+  font-size: 0.875rem;
+}
+
+.bannerButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-white);
+  color: var(--color-purple-900);
+  border-radius: var(--border-radius-lg);
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.bannerButton:hover {
+  background-color: var(--color-gray-100);
+}

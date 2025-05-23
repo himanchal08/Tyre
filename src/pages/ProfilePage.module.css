@@ -1,0 +1,760 @@
+.profilePage {
+  min-height: 100vh;
+  background-color: var(--color-gray-950);
+  color: var(--color-white);
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid rgba(124, 58, 237, 0.1);
+  border-left-color: var(--color-purple-600);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .profileContainer {
+    flex-direction: row;
+    padding: 0 2rem;
+  }
+}
+
+.sidebar {
+  width: 100%;
+  background-color: var(--color-gray-900);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-800);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: 280px;
+    position: sticky;
+    top: 5rem;
+    align-self: flex-start;
+  }
+}
+
+.userInfo {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-gray-800);
+  background: linear-gradient(to right, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5));
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-purple-600), var(--color-blue-500));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.userDetails h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.userDetails p {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.planBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.2), rgba(99, 102, 241, 0.2));
+  border-radius: var(--border-radius-full);
+  color: var(--color-purple-300);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+.navigation {
+  padding: 1rem 0;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navButton svg {
+  margin-right: 0.75rem;
+  color: var(--color-gray-400);
+  transition: color 0.2s ease;
+}
+
+.navButton .navArrow {
+  margin-left: auto;
+  margin-right: 0;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+.navButton:hover svg {
+  color: var(--color-purple-500);
+}
+
+.navButton:hover .navArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navButton.active {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.navButton.active svg {
+  color: var(--color-purple-500);
+}
+
+.navButton.active .navArrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--color-purple-500);
+}
+
+.logoutButton {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-gray-800);
+  padding-top: 1.25rem;
+}
+
+.logoutButton svg {
+  color: var(--color-red-500);
+}
+
+.content {
+  flex: 1;
+}
+
+.section {
+  background-color: var(--color-gray-900);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-gray-800);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-gray-800);
+  background: linear-gradient(to right, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5));
+}
+
+.sectionHeader h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.editButton,
+.manageButton,
+.clearButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  background-color: transparent;
+  color: var(--color-purple-500);
+  border: 1px solid var(--color-purple-500);
+}
+
+.editButton:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.manageButton {
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.manageButton:hover {
+  background-color: var(--color-purple-700);
+}
+
+.clearButton {
+  background-color: transparent;
+  color: var(--color-gray-400);
+  border: 1px solid var(--color-gray-700);
+}
+
+.clearButton:hover {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+.form {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-gray-300);
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--color-purple-500);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--color-gray-400);
+  cursor: pointer;
+}
+
+.passwordToggle:hover {
+  color: var(--color-white);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelButton,
+.saveButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+
+.cancelButton {
+  background-color: transparent;
+  color: var(--color-gray-400);
+  border: 1px solid var(--color-gray-700);
+}
+
+.cancelButton:hover {
+  background-color: var(--color-gray-800);
+  color: var(--color-white);
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+  border: none;
+}
+
+.saveButton:hover {
+  background-color: var(--color-purple-700);
+}
+
+.profileInfo {
+  padding: 1.5rem;
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.infoLabel {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  margin-bottom: 0.25rem;
+}
+
+.infoValue {
+  font-size: 1rem;
+  color: var(--color-white);
+}
+
+.subscriptionDetails {
+  padding: 1.5rem;
+}
+
+.planCard {
+  background-color: var(--color-gray-800);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-gray-700);
+  overflow: hidden;
+}
+
+.planHeader {
+  padding: 1.25rem;
+  background: linear-gradient(to right, rgba(124, 58, 237, 0.1), rgba(99, 102, 241, 0.1));
+  border-bottom: 1px solid var(--color-gray-700);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planHeader h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-white);
+}
+
+.planPrice {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-purple-400);
+}
+
+.planFeatures {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.planFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.featureIcon {
+  color: var(--color-green-500);
+}
+
+.planStatus {
+  padding: 1.25rem;
+  border-top: 1px solid var(--color-gray-700);
+  background-color: rgba(17, 24, 39, 0.3);
+}
+
+.statusItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.statusItem:last-child {
+  margin-bottom: 0;
+}
+
+.statusLabel {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+}
+
+.statusValue {
+  font-size: 0.875rem;
+  color: var(--color-white);
+}
+
+.activeStatus {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--color-green-500);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.subscriptionActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.changePlanButton,
+.cancelSubscriptionButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.changePlanButton {
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.changePlanButton:hover {
+  background-color: var(--color-purple-700);
+}
+
+.cancelSubscriptionButton {
+  background-color: transparent;
+  color: var(--color-red-500);
+  border: 1px solid var(--color-red-500);
+}
+
+.cancelSubscriptionButton:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.noSubscription {
+  padding: 2rem;
+  text-align: center;
+}
+
+.subscribeCta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.subscribeCta:hover {
+  background-color: var(--color-purple-700);
+}
+
+.historyList {
+  padding: 1.5rem;
+}
+
+.historyItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-gray-800);
+  margin-bottom: 1rem;
+}
+
+.historyThumbnail {
+  width: 160px;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.historyThumbnail img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(to right, var(--color-purple-500), var(--color-blue-500));
+}
+
+.historyDetails {
+  flex: 1;
+}
+
+.historyDetails h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.historyMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.historyDate,
+.historyTime,
+.historyDuration {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.historyActions {
+  display: flex;
+  align-items: center;
+}
+
+.watchAgainButton {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--color-purple-600);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.watchAgainButton:hover {
+  background-color: var(--color-purple-700);
+}
+
+.notificationSettings,
+.preferencesSettings {
+  padding: 1.5rem;
+}
+
+.settingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-gray-800);
+  margin-bottom: 1rem;
+}
+
+.settingInfo h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.settingInfo p {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  margin: 0;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-gray-700);
+  transition: 0.4s;
+  border-radius: 1.5rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.125rem;
+  width: 1.125rem;
+  left: 0.1875rem;
+  bottom: 0.1875rem;
+  background-color: var(--color-white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--color-purple-600);
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5rem);
+}
+
+.qualitySelect {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  background-color: var(--color-gray-700);
+  border: 1px solid var(--color-gray-600);
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+  min-width: 120px;
+}
+
+.passwordRequirements {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-gray-800);
+  border-radius: var(--border-radius);
+}
+
+.passwordRequirements h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.passwordRequirements ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.passwordRequirements li {
+  margin-bottom: 0.25rem;
+}
+
+.dangerZone {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-gray-800);
+}
+
+.dangerZone h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-red-500);
+  margin: 0 0 1rem;
+}
+
+.deleteAccountButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-red-500);
+  border: 1px solid var(--color-red-500);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+
+.deleteAccountButton:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+@media (max-width: 767px) {
+  .historyItem {
+    flex-direction: column;
+  }
+
+  .historyThumbnail {
+    width: 100%;
+  }
+
+  .historyThumbnail img {
+    height: 120px;
+  }
+
+  .historyActions {
+    margin-top: 1rem;
+  }
+
+  .subscriptionActions {
+    flex-direction: column;
+  }
+}
