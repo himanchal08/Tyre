@@ -6,30 +6,43 @@
 }
 
 :root {
-  --color-primary: #9333ea;
-  --color-primary-light: #a855f7;
-  --color-primary-dark: #7e22ce;
-  --color-secondary: #4f46e5;
-  --color-secondary-light: #6366f1;
-  --color-secondary-dark: #4338ca;
+  /* Neutral dark base */
+  --color-primary: #1e1e2f; /* Main background */
+  --color-primary-light: #2a2a40;
+  --color-primary-dark: #15151f;
+
+  /* Accent color – modern and fresh but not neon */
+  --color-secondary: #ff3e3e; /* Bright coral red */
+  --color-secondary-light: #ff6b6b;
+  --color-secondary-dark: #cc2f2f;
+
+  /* Basic colors */
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
+
+  /* Greyscale – for text, borders, subtle UI parts */
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+
+  /* Utility colors – avoid too much saturation */
   --color-red-500: #ef4444;
-  --color-green-500: #10b981;
+  --color-green-500: #22c55e;
   --color-blue-500: #3b82f6;
-  --color-purple-500: #8b5cf6;
-  --color-purple-600: #7c3aed;
-  --color-purple-700: #6d28d9;
-  --color-purple-900: #4c1d95;
+
+  /* De-emphasized purple tones (optional) */
+  --color-purple-500: #7c3aed;
+  --color-purple-600: #6d28d9;
+  --color-purple-700: #5b21b6;
+  --color-purple-900: #3c1e70;
+
+  /* Shadows – keep same */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -37,6 +50,8 @@
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Border radii – modern */
   --border-radius-sm: 0.125rem;
   --border-radius: 0.25rem;
   --border-radius-md: 0.375rem;
@@ -46,6 +61,7 @@
   --border-radius-3xl: 1.5rem;
   --border-radius-full: 9999px;
 }
+
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
